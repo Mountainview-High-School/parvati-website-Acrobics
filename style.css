@@ -1,0 +1,86 @@
+@import "animate.css"; /* just in case i need it to look show off this is an animation library downloaded fron the interwebs */
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap'); /* import syncopate font */
+
+body {
+    --colMainBg: #341403; /* the colour used as the background for the website. */
+    --colMainFg: #FCDBB2; /* the colour used as the foreground (main text, buttons etc.) */
+    --colSec: #647940; /* secondary colour */
+    --colTer: #739C5D; /* tertiary colour */
+    --colMid: #9C795C; /* midpoint between BG and FG colours.*/
+    /* i have set all of the websites colours as CSS variabes to make it easier than going through every instance that uses that colour and changing it to the correct one.*/
+    margin: 0%; /* this applies a margin of 0 to all of the body. this means that there wont be any stupid white border around the page. */
+    height: 100vh;
+
+    background-color: var(--colMainBg); /* set the background to the variable */
+}
+
+
+
+
+
+.border {
+    background-color: var(--colMainBg);
+    border-style: solid;
+    border-color: var(--colMid);
+    border-width: 3px;
+    margin: 3px;
+    padding: 3px;
+}
+
+.subtext {
+    color: var(--colMainFg);
+    font-family: Syncopate;
+    margin: 0%;
+    text-align: center;
+}
+
+.text {
+    color: var(--colMainFg);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0%;
+    text-align: justify;
+}
+
+
+h1 {
+    color: var(--colMainFg);
+    font-family: Syncopate;
+    margin: 0%;
+    text-align: center;
+    font-size: 75px;
+}
+
+/* Grid Setup */
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.4fr 1.6fr 1.6fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "Header Header Header"
+        "Textbox-1 Textbox-2 Textbox-2"
+        "Textbox-1 Textbox-3 Textbox-3";
+    height: 100vh;
+    
+}
+
+.Header {
+    grid-area: Header;
+}
+
+.Textbox-1 {
+    grid-area: Textbox-1;
+    overflow: scroll;
+}
+
+.Textbox-2 {
+    grid-area: Textbox-2;
+    overflow: scroll;
+}
+
+.Textbox-3 {
+    grid-area: Textbox-3;
+    overflow: scroll;
+}
