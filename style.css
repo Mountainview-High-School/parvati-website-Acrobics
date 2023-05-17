@@ -61,16 +61,54 @@ h1 {
 
 /* Grid Setup */
 
+@media only screen and (min-width: 768px) {
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.4fr 1.6fr 1.6fr;
     gap: 0px 0px;
+    grid-auto-flow: row;
     grid-template-areas:
         "Header Header Header"
-        "Textbox-1 Textbox-2 Textbox-3"
-        "Textbox-1 Textbox-2 Textbox-3";
+        "Textbox-1 Textbox-2 Textbox-2"
+        "Textbox-1 Textbox-3 Textbox-3";
+
     height: 100%
+}
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 0.4fr 1.6fr 1.6fr 1.6fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "Header Header Header"
+            "Textbox-1 Textbox-1 Textbox-1"
+            "Textbox-2 Textbox-2 Textbox-2"
+            "Textbox-3 Textbox-3 Textbox-3";
+
+        height: 100%
+    }
+}
+
+
+.Header {
+    grid-area: Header;
+}
+
+.Textbox-1 {
+    grid-area: Textbox-1;
+}
+
+.Textbox-2 {
+    grid-area: Textbox-2;
+}
+
+.Textbox-3 {
+    grid-area: Textbox-3;
 }
 
 .Header {
