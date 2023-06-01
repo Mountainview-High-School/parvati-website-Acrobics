@@ -1,26 +1,50 @@
-@import "animate.css"; /* just in case i need it to look show off this is an animation library downloaded fron the interwebs */
-@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap'); /* import syncopate font */
+@import "animate.css";
+/* animation library */
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
+/* import syncopate font */
 
-:root{
-    /* --colMainBg: #341403; /* the colour used as the background for the website. */
-    /* --colMainFg: #FCDBB2; /* the colour used as the foreground (main text, buttons etc.) */
-    /* --colTer: #647940; /* secondary colour */
-    /* --colSec: #98bb85; /* tertiary colour */
-    /* --colMid: #9C795C; /* midpoint between BG and FG colours.*/
+
+/* this following and the next media query checks to see wether the user's system theme is set to either light or dark mode and accordingly swaps the dark and light colours around. */
+.darkMode {
+
+    --colMainBg: #341403;
+    /* the colour used as the background for the website. */
+    --colMainFg: #FCDBB2;
+    /* the colour used as the foreground (main text, buttons etc.) */
+    --colTer: #647940;
+    /* secondary colour */
+    --colSec: #98bb85;
+    /* tertiary colour */
+    --colMid: #9C795C;
+    /* midpoint between BG and FG colours.*/
     /* i have set all of the websites colours as CSS variabes to make it easier than going through every instance that uses that colour and changing it to the correct one.*/
-    --colMainBg: #000000;
-    --colMainFg: #FFFFFF;
-    --colMid: #777777;
-    --colSec: #333333;
-    --colTer: #BBBBBB;
 
 }
 
+.lightMode {
+
+    --colMainFg: #341403;
+    /* the colour used as the foreground (main text, buttons etc.) */
+    --colMainBg: #FCDBB2;
+    /* the colour used as the background for the website. */
+    --colTer: #647940;
+    /* secondary colour */
+    --colSec: #98bb85;
+    /* tertiary colour */
+    --colMid: #9C795C;
+    /* midpoint between BG and FG colours.*/
+    /* i have set all of the websites colours as CSS variabes to make it easier than going through every instance that uses that colour and changing it to the correct one.*/
+
+}
+
+
 body {
-margin: 0%; /* this applies a margin of 0 to all of the body. this means that there wont be any stupid white border around the page. */
+    margin: 0%;
+    /* this applies a margin of 0 to all of the body. this means that there wont be any stupid white border around the page. */
     height: 100vh;
 
-    background-color: var(--colMainBg); /* set the background to the variable */
+    background-color: var(--colMainBg);
+    /* set the background to the variable */
 }
 
 
@@ -50,82 +74,166 @@ margin: 0%; /* this applies a margin of 0 to all of the body. this means that th
     text-align: justify;
 }
 
+@media only screen and (min-width: 500px) {
+    h1 {
+        color: var(--colMainFg);
+        font-family: Syncopate;
+        margin: 0%;
+        text-align: center;
+        font-size: 75px;
+    }
+}
 
-h1 {
-    color: var(--colMainFg);
-    font-family: Syncopate;
-    margin: 0%;
-    text-align: center;
-    font-size: 75px;
+
+
+@media only screen and (max-width: 500px) {
+    h1 {
+        color: var(--colMainFg);
+        font-family: Syncopate;
+        margin: 0%;
+        text-align: center;
+        font-size: 40px;
+    }
 }
 
 /* Grid Setup */
 
 @media only screen and (min-width: 768px) {
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.4fr 1.6fr 1.6fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-        "Header Header Header"
-        "Textbox-1 Textbox-2 Textbox-2"
-        "Textbox-1 Textbox-3 Textbox-3";
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 256px 256px 256px 1fr;
+        grid-template-rows: min-content 0.2fr 1.6fr 1.6fr;
+        grid-auto-columns: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "Whitespace-L Header Header Header Whitespace-R"
+            "Whitespace-L Navbar Navbar Navbar Whitespace-R"
+            "Whitespace-L Textbox-1 Textbox-2 Textbox-2 Whitespace-R"
+            "Whitespace-L Textbox-1 Textbox-3 Textbox-3 Whitespace-R";
+        height: 100%;
+    }
 
-    height: 100%
-}
+    .Header {
+        grid-area: Header;
+    }
+
+    .Navbar {
+        grid-area: Navbar;
+    }
+
+    .Textbox-1 {
+        grid-area: Textbox-1;
+        overflow: auto;
+    }
+
+    .Textbox-2 {
+        grid-area: Textbox-2;
+        overflow: auto;
+    }
+
+    .Textbox-3 {
+        grid-area: Textbox-3;
+        overflow: auto;
+    }
+
+    .Whitespace-L {
+        grid-area: Whitespace-L;
+    }
+
+    .Whitespace-R {
+        grid-area: Whitespace-R;
+    }
+
+    .navtext {
+        font-family: syncopate;
+        color: var(--colMainFg);
+        text-align: center;
+        font-size: 30px;
+        margin: 0px;
+    }
+
+    .themeButton {
+        background-color: var(--colMainFg);
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        margin: 5px;
+        bottom: 0;
+        right: 0;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .themeText {
+        color: var(--colMainBg);
+        text-align: center;
+        font-size: 45px;
+        margin: 0px;
+        font-weight: bolder;
+    }
+
 }
 
 @media only screen and (max-width: 768px) {
     .container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 0.4fr 1.6fr 1.6fr 1.6fr;
+        grid-template-rows: min-content min-content 1.3fr 1.6fr;
+        grid-auto-columns: 1fr;
         gap: 0px 0px;
         grid-auto-flow: row;
+        height: 100%;
         grid-template-areas:
             "Header Header Header"
-            "Textbox-1 Textbox-1 Textbox-1"
-            "Textbox-2 Textbox-2 Textbox-2"
-            "Textbox-3 Textbox-3 Textbox-3";
+            "Navbar Navbar Navbar"
+            "Textbox-1 Textbox-2 Textbox-3"
+            "Textbox-1 Textbox-2 Textbox-3";
+    }
 
-        height: 100%
+    .Header {
+        grid-area: Header;
+    }
+
+    .Navbar {
+        grid-area: Navbar;
+    }
+
+    .Textbox-1 {
+        grid-area: Textbox-1;
+        overflow: auto;
+    }
+
+    .Textbox-2 {
+        grid-area: Textbox-2;
+        overflow: auto;
+    }
+
+    .Textbox-3 {
+        grid-area: Textbox-3;
+        overflow: auto;
+    }
+
+    .navtext {
+        font-family: syncopate;
+        color: var(--colMainFg);
+        text-align: center;
+        font-size: 40px;
+        margin: 0px;
     }
 }
 
-
-.Header {
-    grid-area: Header;
-}
-
-.Textbox-1 {
-    grid-area: Textbox-1;
-}
-
-.Textbox-2 {
-    grid-area: Textbox-2;
-}
-
-.Textbox-3 {
-    grid-area: Textbox-3;
-}
-
-.Header {
-    grid-area: Header;
-}
-
-.Textbox-1 {
-    grid-area: Textbox-1;
-    overflow: scroll;
-}
-
-.Textbox-2 {
-    grid-area: Textbox-2;
-    overflow: scroll;
-}
-
-.Textbox-3 {
-    grid-area: Textbox-3;
-    overflow: scroll;
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
