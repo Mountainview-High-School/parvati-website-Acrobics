@@ -47,8 +47,3 @@ function setLightMode() {
   document.getElementById('sunMoon').innerText = "☾"
 }
 
-setInterval(printDarkModeState, 1);
-
-function printDarkModeState() {
-  console.log(darkMode);
-}
