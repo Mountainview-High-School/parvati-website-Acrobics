@@ -1,5 +1,4 @@
-let darkMode = null;
-console.log("darkMode has just been set to:", darkMode)
+darkMode = null;
 
 function detectSystemTheme() {
   if (
@@ -7,12 +6,10 @@ function detectSystemTheme() {
     window.matchMedia("(prefers-color-scheme: dark)").matches
   ) {
     darkMode = true;
-    console.log("darkMode has just been set to:", darkMode)
     console.log("dark mode detected");
     setDarkMode();
   } else {
     darkMode = false;
-    console.log("darkMode has just been set to:", darkMode)
     console.log("light mode detected");
     setLightMode();
   }
@@ -20,12 +17,10 @@ function detectSystemTheme() {
 
 function toggleTheme() {
   if (darkMode == true) {
-    console.log("I think darkmode is true");
     setLightMode();
     return;
   }
   if (darkMode == false) {
-    console.log("I think darkmode is false");
     setDarkMode();
     return;
   }

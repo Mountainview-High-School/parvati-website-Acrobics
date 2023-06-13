@@ -4,9 +4,8 @@
 /* import syncopate font */
 
 
-/* this following and the next media query checks to see wether the user's system theme is set to either light or dark mode and accordingly swaps the dark and light colours around. */
+/* these two classes are inserted into the classlist of the body depending on wether the javascript has determined if the user is in dark mode or not. */
 .darkMode {
-
     --colMainBg: #341403;
     /* the colour used as the background for the website. */
     --colMainFg: #FCDBB2;
@@ -18,11 +17,9 @@
     --colMid: #9C795C;
     /* midpoint between BG and FG colours.*/
     /* i have set all of the websites colours as CSS variabes to make it easier than going through every instance that uses that colour and changing it to the correct one.*/
-
 }
 
 .lightMode {
-
     --colMainFg: #341403;
     /* the colour used as the foreground (main text, buttons etc.) */
     --colMainBg: #FCDBB2;
@@ -34,23 +31,18 @@
     --colMid: #9C795C;
     /* midpoint between BG and FG colours.*/
     /* i have set all of the websites colours as CSS variabes to make it easier than going through every instance that uses that colour and changing it to the correct one.*/
-
 }
 
-
+/* this is a global body tag. you'll see later there is also a body tag in the media query bits that controlls scrolling */
 body {
     margin: 0%;
     /* this applies a margin of 0 to all of the body. this means that there wont be any stupid white border around the page. */
-
 
     background-color: var(--colMainBg);
     /* set the background to the variable */
 }
 
-
-
-
-
+/* this class is for the border you see around every element */
 .border {
     background-color: var(--colMainBg);
     border-style: solid;
@@ -58,8 +50,10 @@ body {
     border-width: 3px;
     margin: 3px;
     padding: 3px;
+    z-index: 1;
 }
 
+/* this class is for the 'est.' text under the title*/
 .subtext {
     color: var(--colMainFg);
     font-family: Syncopate;
@@ -67,6 +61,7 @@ body {
     text-align: center;
 }
 
+/* this class is for the paragraphs. */
 .text {
     color: var(--colMainFg);
     font-family: Arial, Helvetica, sans-serif;
@@ -74,6 +69,10 @@ body {
     text-align: justify;
 }
 
+/* these following two media queries are for the title text, one for when the screen width is larger than 500px and one that is smaller.
+reason being when the screen is smaller than around 500px the title takes up way too much space and so I just decidied to shrink it when it gets to that point.*/
+
+/* when screen is bigger than 500: */
 @media only screen and (min-width: 500px) {
     h1 {
         color: var(--colMainFg);
@@ -84,8 +83,7 @@ body {
     }
 }
 
-
-
+/* when screen is smaller than 500: */
 @media only screen and (max-width: 500px) {
     h1 {
         color: var(--colMainFg);
@@ -96,13 +94,20 @@ body {
     }
 }
 
-/* Grid Setup */
+/* here are the two massive media queries that encompass most of the css. most of the previous stuff was for things that apply to both scenarios,
+but now we're onto things that must change between the two. the query being: if the screen size is bigger or smaller than 768px. this is the width of the content
+when the left and right whitespace of the website would otherwise be zero. this is just slightly bigger than most phone screens, and so is quite a good denominator
+roughly of wether we're in a mobile setting or not. */
 
+/* when screen is bigger than 768: */
 @media only screen and (min-width: 768px) {
+
+    /* i set the height of the body to be 100% of the view hight. this makes sure that it won't accidentally be any taller and allow the user to scroll the whole page.*/
     body {
         height: 100vh;
     }
 
+    /* here is the css grid container class. this outlines things like how much whitespace there should be, and the layout of all the elements in the site. */
     .container {
         display: grid;
         grid-template-columns: 1fr 256px 256px 256px 1fr;
@@ -118,6 +123,7 @@ body {
         height: 100%;
     }
 
+    /* here i assign each grid identifier to its own class: */
     .Header {
         grid-area: Header;
     }
@@ -149,6 +155,7 @@ body {
         grid-area: Whitespace-R;
     }
 
+    /* this is the class for the navbar. */
     .navtext {
         font-family: syncopate;
         color: var(--colMainFg);
@@ -157,6 +164,8 @@ body {
         margin: 0px;
     }
 
+    /* i have a button at the bottom right corner of the screen that uses some javascript to change the light/dark mode of the site. this makes it snap always to the
+    bottom right, and tells the cursor to change to the pointing finger so you know you are able to click it.*/
     .themeButton {
         background-color: var(--colMainFg);
         position: absolute;
@@ -167,11 +176,14 @@ body {
         right: 0;
         cursor: pointer;
         border-radius: 5px;
+        z-index: 2;
     }
 
+    /* this is for the text in the theme button. */
     .themeText {
         color: var(--colMainBg);
         text-align: center;
+        line-height: 50px;
         font-size: 35px;
         margin: 0px;
         font-weight: bolder;
@@ -179,7 +191,11 @@ body {
 
 }
 
+/* when screen is smaller than 768: */
 @media only screen and (max-width: 768px) {
+
+    /* this auto tag sets the height of whatever the website would be if the text continued and didnt overflow and scroll around in the borders. i made this
+    decision as it makes much more sense in a mobile setting.*/
     body {
         height: auto;
     }
@@ -224,6 +240,31 @@ body {
         text-align: center;
         font-size: 40px;
         margin: 0px;
+    }
+
+    /* instead of the theme button 'floating' to the bottom right of the screen, and overlaying the content if needed, it instead snaps to the very bottom
+    of the content, underneath everything else instead of on top. this is better for the mobile mode as the button could get in the way of text and hinder
+    readability quickly. */
+    .themeButton {
+        background-color: var(--colMainFg);
+        position: relative;
+        height: 50px;
+        width: 50px;
+        margin: 5px;
+        margin-left: auto;
+        cursor: pointer;
+        border-radius: 5px;
+        z-index: 2;
+    }
+
+    /* this is for the text in the theme button. */
+    .themeText {
+        color: var(--colMainBg);
+        text-align: center;
+        line-height: 50px;
+        font-size: 35px;
+        margin: 0px;
+        font-weight: bolder;
     }
 }
 
