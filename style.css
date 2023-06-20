@@ -67,6 +67,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0%;
     text-align: justify;
+    font-size: larger;
+    padding: 5px;
 }
 
 /* these following two media queries are for the title text, one for when the screen width is larger than 500px and one that is smaller.
@@ -189,6 +191,17 @@ roughly of wether we're in a mobile setting or not. */
         font-weight: bolder;
     }
 
+    .paragraphImage {
+        padding: 5px;
+        float: right;
+        width: 50%;
+        border-radius: 10px;
+    }
+
+    .sideImage {
+        width: 100%;
+        border-radius: 10px;
+    }
 }
 
 /* when screen is smaller than 768: */
