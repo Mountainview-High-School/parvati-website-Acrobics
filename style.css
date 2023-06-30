@@ -71,6 +71,30 @@ body {
     padding: 5px;
 }
 
+.text-center {
+    text-align: center;
+}
+
+a:link {
+    text-decoration: none;
+    color: var(--colMainFg);
+}
+
+a:visited {
+    text-decoration: none;
+    color: var(--colMainFg);
+}
+
+a:hover {
+    color: var(--colMainBg);
+    background-color: var(--colMainFg);
+}
+
+a:active {
+    text-decoration: none;
+    color: var(--colMainFg);
+}
+
 /* these following two media queries are for the title text, one for when the screen width is larger than 500px and one that is smaller.
 reason being when the screen is smaller than around 500px the title takes up way too much space and so I just decidied to shrink it when it gets to that point.*/
 
@@ -113,7 +137,7 @@ roughly of wether we're in a mobile setting or not. */
     .container {
         display: grid;
         grid-template-columns: 1fr 256px 256px 256px 1fr;
-        grid-template-rows: min-content 0.2fr 1.6fr 1.6fr;
+        grid-template-rows: min-content min-content 1.6fr 1.6fr;
         grid-auto-columns: 1fr;
         gap: 0px 0px;
         grid-auto-flow: row;
@@ -122,6 +146,20 @@ roughly of wether we're in a mobile setting or not. */
             "Whitespace-L Navbar Navbar Navbar Whitespace-R"
             "Whitespace-L Textbox-1 Textbox-2 Textbox-2 Whitespace-R"
             "Whitespace-L Textbox-1 Textbox-3 Textbox-3 Whitespace-R";
+        height: 100%;
+    }
+
+    .historycontainer {
+        display: grid;
+        grid-template-columns: 1fr 768px 1fr;
+        grid-template-rows: min-content min-content 1.6fr;
+        grid-auto-columns: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "Whitespace-L Header Whitespace-R"
+            "Whitespace-L Navbar Whitespace-R"
+            "Whitespace-L Textbox-Full Whitespace-R";
         height: 100%;
     }
 
@@ -146,6 +184,11 @@ roughly of wether we're in a mobile setting or not. */
 
     .Textbox-3 {
         grid-area: Textbox-3;
+        overflow: auto;
+    }
+
+    .Textbox-Full {
+        grid-area: Textbox-Full;
         overflow: auto;
     }
 
