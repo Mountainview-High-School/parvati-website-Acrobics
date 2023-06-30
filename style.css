@@ -149,7 +149,7 @@ roughly of wether we're in a mobile setting or not. */
         height: 100%;
     }
 
-    .historycontainer {
+    .fullcontainer {
         display: grid;
         grid-template-columns: 1fr 768px 1fr;
         grid-template-rows: min-content min-content 1.6fr;
