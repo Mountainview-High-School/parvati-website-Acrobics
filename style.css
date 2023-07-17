@@ -444,8 +444,9 @@ roughly of wether we're in a mobile setting or not. */
         grid-template-areas:
             "Header Header Header"
             "Navbar Navbar Navbar"
-            "Textbox-1 Textbox-2 Textbox-3"
-            "Textbox-1 Textbox-2 Textbox-3";
+            "Textbox-1 Textbox-1 Textbox-1"
+            "Textbox-2 Textbox-2 Textbox-2"
+            "Textbox-3 Textbox-3 Textbox-3";
     }
 
     .Header {
@@ -499,6 +500,191 @@ roughly of wether we're in a mobile setting or not. */
         font-size: 35px;
         margin: 0px;
         font-weight: bolder;
+    }
+
+
+    .sideImage, 
+    .paragraphImage {
+        padding: 5px;
+        float: right;
+        width: 25%;
+        border-radius: 10px;
+    }
+
+        /* here are the menu arrangements: */
+    .sevenMenu {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: min-content;
+        grid-auto-columns: 1fr;
+        grid-auto-rows: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "item1 item2 item3 item4 item5 item6 item7";
+        height: 100%;
+    }
+
+    .sixMenu {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: min-content;
+        grid-auto-columns: 1fr;
+        grid-auto-rows: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "item1 item2 item3 item4 item5 item6";
+        height: 100%;
+    }
+
+    .fourMenu {
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-auto-rows: 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: min-content;
+        gap: 0px 0px;
+        grid-template-areas:
+            "item1 item2 item3 item4";
+        height: 100%;
+    }
+
+    .item1 {
+        grid-area: item1;
+    }
+
+    .item2 {
+        grid-area: item2;
+    }
+
+    .item3 {
+        grid-area: item3;
+    }
+
+    .item4 {
+        grid-area: item4;
+    }
+
+    .item5 {
+        grid-area: item5;
+    }
+
+    .item6 {
+        grid-area: item6;
+    }
+
+    .item7 {
+        grid-area: item7;
+    }
+
+    .rowcontainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr min-content 0.2fr 0.4fr 0.2fr min-content 0.2fr min-content 0.2fr min-content;
+        grid-auto-columns: 1fr;
+        grid-auto-rows: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "titleCoffee"
+            "rowCoffee"
+            "titleShots"
+            "rowShots"
+            "titlePastries"
+            "rowPastries"
+            "titleSandwiches"
+            "rowSandwiches"
+            "titleWraps"
+            "rowWraps";
+    }
+
+    .rowWraps {
+        grid-area: rowWraps;
+    }
+
+    .titleWraps {
+        grid-area: titleWraps;
+    }
+
+    .rowSandwiches {
+        grid-area: rowSandwiches;
+    }
+
+    .titleSandwiches {
+        grid-area: titleSandwiches;
+    }
+
+    .rowPastries {
+        grid-area: rowPastries;
+    }
+
+    .titlePastries {
+        grid-area: titlePastries;
+    }
+
+    .rowShots {
+        grid-area: rowShots;
+    }
+
+    .titleShots {
+        grid-area: titleShots;
+    }
+
+    .rowCoffee {
+        grid-area: rowCoffee;
+    }
+
+    .titleCoffee {
+        grid-area: titleCoffee;
+    }
+
+    .menuImage {
+        width: 100%;
+        border-radius: 3px;
+    }
+
+    .menuLabel {
+        color: var(--colMainFg);
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0%;
+        text-align: center;
+        font-size: small;
+        padding: 0px;
+    }
+
+    .shotText {
+        font-family: 'Fasthand', cursive;
+        text-align: center;
+        color: #341403;
+        margin: 0;
+        font-size: larger;
+    }
+
+    .vanilla {
+        background-color: #ffe1b4;
+    }
+
+    .caramel {
+        background-color: #d57527;
+    }
+
+    .hazelnut {
+        background-color: #693a19;
+    }
+
+    .whiteChoc {
+        background-color: #ffe997;
+    }
+
+    .butterscotch {
+        background-color: #ffd950;
+    }
+
+    .peppermint {
+        background-color: #9fc165;
+    }
+
     }
 }
 
