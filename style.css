@@ -516,3 +516,137 @@ roughly of wether we're in a mobile setting or not. */
     user-select: none;
     /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
+
+/* this following css is just for the order screen: */
+
+#order-container {
+    margin-top: 20px;
+}
+
+.item-row {
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.add-btn,
+.remove-btn {
+    color: var(--colMainBg);
+    background-color: var(--colMainFg);
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 40px;
+}
+
+.add-btn:active,
+.remove-btn:active {
+    background-color: var(--colMid);
+}
+
+
+.category-select,
+.item-select {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.submit-btn,
+.done-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: var(--colSec);
+    
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.submit-btn:active,
+.done-btn:active {
+    background-color: var(--colTer);
+}
+
+#order-summary {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.orderscreencontainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content min-content min-content;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "order-container"
+        "done-btn"
+        "order-summary"
+        "submit-btn";
+    height: max-content;
+}
+
+.order-container {
+    grid-area: order-container;
+}
+
+.done-btn {
+    grid-area: done-btn;
+}
+
+#order-summary {
+    grid-area: order-summary;
+}
+
+.submit-btn {
+    grid-area: submit-btn;
+}
+
+.item-row {
+    display: grid;
+    grid-template-columns: min-content auto min-content;
+    grid-template-rows: 1fr;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "add-btn item-selectors remove-btn";
+    margin: auto;
+    
+}
+
+.add-btn {
+    grid-area: add-btn;
+}
+
+.item-selectors {
+    grid-area: item-selectors;
+    margin: auto;
+}
+
+.remove-btn {
+    grid-area: remove-btn;
+}
+
+.submittedOrder {
+    background-color: white;
+    border-style:inset;
+    color: black;
+    height: 100%;
+    width: min-content;
+    text-align: center;
+    white-space: nowrap;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+strong {
+    font-family: Syncopate;
+}

@@ -21,6 +21,30 @@
         <p class="navtext"><a href="index.html">Home</a> - <a href="menu.html">Menu</a> - <a href="history.html">History</a> - <a href="order.html">Order</a></p>
       </div>
       <div class="Textbox-Full border">
+        <div class="orderscreencontainer">
+          <div id="order-container">
+            <div class="item-row">
+              <button class="add-btn" onclick="addItem()">+</button>
+              <div class="item-selectors">
+                <select class="category-select" onchange="updateItems(this)">
+                  <option value="" disabled selected>Select category</option>
+                </select>
+                <select class="item-select" disabled>
+                  <option value="" disabled selected>Select item</option>
+                </select>
+                <select class="flavor-select" disabled>
+                  <option value="None" selected>No flavor shot</option>
+                </select>
+              </div>
+              <button class="remove-btn" onclick="removeItem(this)">-</button>
+            </div>
+          </div>
+          <button class="done-btn" onclick="showOrder()">Done</button>
+          <div id="order-summary"></div>
+          <button class="submit-btn" onclick="submitOrder()" style="display:none;">Submit</button>
+        </div>
+
+        <script src="order.js"></script>
       </div>
     <div class="themeButton" onclick="toggleTheme()">
         <p class="themeText noselect" id="sunMoon">Theme</p>
