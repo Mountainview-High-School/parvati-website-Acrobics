@@ -34,6 +34,19 @@
     /* i have set all of the websites colours as CSS variabes to make it easier than going through every instance that uses that colour and changing it to the correct one.*/
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hideScroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hideScroll {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
 /* this is a global body tag. you'll see later there is also a body tag in the media query bits that controlls scrolling */
 body {
     margin: 0%;
@@ -109,6 +122,7 @@ reason being when the screen is smaller than around 500px the title takes up way
         text-align: center;
         font-size: 75px;
     }
+    
 }
 
 /* when screen is smaller than 500: */
@@ -362,6 +376,7 @@ roughly of wether we're in a mobile setting or not. */
 
     .rowShots {
         grid-area: rowShots;
+
     }
 
     .titleShots {
@@ -644,21 +659,37 @@ roughly of wether we're in a mobile setting or not. */
         border-radius: 3px;
     }
 
-    .menuLabel {
-        color: var(--colMainFg);
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 0%;
-        text-align: center;
-        font-size: small;
-        padding: 0px;
-    }
 
     .shotText {
         font-family: 'Fasthand', cursive;
         text-align: center;
         color: #341403;
         margin: 0;
-        font-size: larger;
+        font-size: small;
+    }
+
+    /* when screen is smaller than 500: */
+    @media only screen and (max-width: 500px) {
+        .menuLabel {
+            color: var(--colMainFg);
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0%;
+            text-align: center;
+            font-size: 10px;
+            padding: 0px;
+        }
+    }
+
+    /* when screen is larger than 500: */
+    @media only screen and (min-width: 500px) {
+        .menuLabel {
+            color: var(--colMainFg);
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0%;
+            text-align: center;
+            font-size: small;
+            padding: 0px;
+        }
     }
 
     .vanilla {
@@ -685,7 +716,6 @@ roughly of wether we're in a mobile setting or not. */
         background-color: #9fc165;
     }
 
-    }
 }
 
 .noselect {
