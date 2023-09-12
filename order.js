@@ -94,7 +94,7 @@ function removeItem(removeButton) {
 
 function showOrder() {
   const items = orderContainer.querySelectorAll(".item-row")
-  let orderText = "<div class=\"submittedOrder\"> <strong>Your Order:</strong><br>"
+  let orderText = "<div class=\"submittedOrder\"> <strong>YOUR ORDER:</strong><br>"
 
   items.forEach((item) => {
     const categorySelect = item.querySelector(".category-select")

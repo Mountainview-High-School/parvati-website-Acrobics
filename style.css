@@ -4,7 +4,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
 /* import syncopate and fasthand font */
 
-
 /* these two classes are inserted into the classlist of the body depending on wether the javascript has determined if the user is in dark mode or not. */
 .darkMode {
     --colMainBg: #341403;
@@ -79,11 +78,13 @@ body {
 /* this class is for the paragraphs. */
 .text {
     color: var(--colMainFg);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     margin: 0%;
     text-align: justify;
     font-size: larger;
     padding: 5px;
+    font-weight: bold;
+    
 }
 
 .text-center {
@@ -403,6 +404,7 @@ roughly of wether we're in a mobile setting or not. */
         text-align: center;
         font-size: small;
         padding: 0px;
+        font-weight: bold;
     }
 
     .shotText {
@@ -672,11 +674,12 @@ roughly of wether we're in a mobile setting or not. */
     @media only screen and (max-width: 500px) {
         .menuLabel {
             color: var(--colMainFg);
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Helvetica, Arial, sans-serif;
             margin: 0%;
             text-align: center;
             font-size: 10px;
             padding: 0px;
+            font-weight: bold;
         }
     }
 
@@ -684,11 +687,12 @@ roughly of wether we're in a mobile setting or not. */
     @media only screen and (min-width: 500px) {
         .menuLabel {
             color: var(--colMainFg);
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Helvetica, Arial, sans-serif;
             margin: 0%;
             text-align: center;
             font-size: small;
             padding: 0px;
+            font-weight: bold;
         }
     }
 
